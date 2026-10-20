@@ -30,12 +30,6 @@ uv run python Simple_SD_Text2img.py "A lighthouse beside the sea" --device cpu
 uv run python Simple_SD_Text2img.py --help
 ```
 
-```bash
-uv run python Simple_SD_Text2img.py "A watercolor mountain lake" --output images/lake.png --seed 42 --steps 30
-uv run python Simple_SD_Text2img.py "A lighthouse beside the sea" --device cpu
-uv run python Simple_SD_Text2img.py --help
-```
-
 Use `--model` for another compatible Stable Diffusion model ID or a local
 Diffusers model directory. `--guidance-scale` defaults to 7.5 and `--steps`
 to 50. A seed helps repeat generation in the same environment; results
