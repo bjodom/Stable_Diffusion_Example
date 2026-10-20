@@ -1,0 +1,31 @@
+[project]
+name = "stable-diffusion-text2img"
+version = "0.1.0"
+description = "Standalone PyTorch text-to-image sample with Intel XPU support"
+readme = "README.md"
+requires-python = "==3.14.*"
+dependencies = [
+    "torch>=2.6.0,<3",
+    "torchvision>=0.21.0,<1",
+    "triton-xpu>=3.6.0 ; sys_platform == 'win32' or sys_platform == 'linux'",
+    "diffusers>=0.32.2,<1",
+    "transformers>=4.57.6,<5",
+    "accelerate>=1.4.0,<2",
+    "pillow>=11.1.0,<13",
+]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-xpu", marker = "sys_platform == 'win32' or sys_platform == 'linux'" },
+]
+torchvision = [
+    { index = "pytorch-xpu", marker = "sys_platform == 'win32' or sys_platform == 'linux'" },
+]
+triton-xpu = [
+    { index = "pytorch-xpu", marker = "sys_platform == 'win32' or sys_platform == 'linux'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-xpu"
+url = "https://download.pytorch.org/whl/xpu"
+explicit = true
